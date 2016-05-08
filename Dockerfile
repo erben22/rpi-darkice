@@ -8,11 +8,11 @@ ENV REFRESHED_AT 2016-02-05
 
 RUN echo 'deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi' >> /etc/apt/sources.list
 
-# Update the apt cache, install git, and
-# then pull the build dependencies for rtl-sdr.
+# Update the apt cache and install darkice and
+# its supporting utilities.
 
 RUN apt-get update && apt-get -y upgrade && \
-  apt-get -y install darkice alsa-utils nano openssh-client && \
+  apt-get -y install darkice alsa-utils nano openssh-client net-tools && \
   apt-get clean
 
 RUN rm -rf /var/lib/apt/lists/* && \
