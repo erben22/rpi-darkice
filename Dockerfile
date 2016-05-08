@@ -12,7 +12,7 @@ RUN echo 'deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib n
 # then pull the build dependencies for rtl-sdr.
 
 RUN apt-get update && apt-get -y upgrade && \
-  apt-get -y install darkice alsa-utils nano && \
+  apt-get -y install darkice alsa-utils nano openssh-client && \
   apt-get clean
 
 RUN rm -rf /var/lib/apt/lists/* && \
